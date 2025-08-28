@@ -38,3 +38,16 @@ export async function getArtist(id) {
     }
 }
 
+export async function getFeedbacks(page = 1) { 
+    const endPoint = '/feedbacks';
+    const url = baseurl + endPoint;
+    const params = {
+        page,
+    }
+    try {
+        const res = await axios.get(url, { params });
+        return res.data;
+    } catch (error) {
+        console.error('Error fetching feedbacks:', error);
+    }
+}
