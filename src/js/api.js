@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const baseurl = 'https://sound-wave.b.goit.study/api';
+
 export async function getArtists(
   page = 1,
   name = '',
@@ -7,7 +9,6 @@ export async function getArtists(
   genre = ''
 ) {
   try {
-    const baseurl = 'https://sound-wave.b.goit.study/api';
     const endPoint = '/artists';
     const url = baseurl + endPoint;
 
@@ -25,3 +26,15 @@ export async function getArtists(
     console.error('Error fetching artists:', error);
   }
 }
+
+export async function getArtist(id) {
+    const endPoint = `/artist/${id}`;
+    const url = baseurl + endPoint;
+    try {
+        const res = await axios.get(url);
+        return res.data;
+    } catch (error) {
+        console.error('Error fetching artist:', error);
+    }
+}
+
