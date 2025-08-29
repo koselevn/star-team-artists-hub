@@ -4,9 +4,9 @@ const baseurl = 'https://sound-wave.b.goit.study/api';
 
 export async function getArtists(
   page = 1,
-  name = '',
-  sortName = '',
-  genre = ''
+  name = null,
+  sortName = null,
+  genre = null,
 ) {
   try {
     const endPoint = '/artists';
@@ -28,8 +28,8 @@ export async function getArtists(
 }
 
 export async function getArtist(id) {
-    const endPoint = `/artist/${id}`;
-    const url = baseurl + endPoint;
+    const endPoint = `/artists/${id}`;
+  const url = baseurl + endPoint;
     try {
         const res = await axios.get(url);
         return res.data;
@@ -41,7 +41,8 @@ export async function getArtist(id) {
 export async function getFeedbacks(page = 1) { 
     const endPoint = '/feedbacks';
     const url = baseurl + endPoint;
-    const params = {
+  const params = {
+      limit: 10,
         page,
     }
     try {
