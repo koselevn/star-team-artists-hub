@@ -19,7 +19,7 @@ body {
      display: flex;
      flex-direction: row;
      gap: 32px;
-        align-items: center;
+    align-items: center;
     }
 }
 
@@ -31,18 +31,21 @@ body {
     border-radius: 20px;
     overflow: hidden;   
     width: 100%;
+    max-width: 288px;
     border: 1px solid #000000;
     object-fit: cover;
 }
 
 @media (min-width: 768px) {
     .about-us-img-container img {
-        border-radius: 16px;        
+        border-radius: 16px; 
+        max-width: 704px;
     }
 }
 @media (min-width: 1440px) {
     .about-us-img-container img {
-        min-width: 640px;        
+        min-width: 640px; 
+        max-width: 100%;
     }
 }
 
