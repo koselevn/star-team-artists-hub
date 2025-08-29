@@ -1,43 +1,36 @@
 .footer {
+  padding-block: 80px;
+  padding-inline: 64px;
+  width: 1440px;
+  height: 397px;
+  background: #060307;
 }
 .footer-content {
+  width: 640px;
+  height: 101px;
 }
 .footer-logo {
   width: 116px;
   height: 45px;
-  display: flex;
-  justify-content: center;
 }
 .icon-logo {
   width: 116px;
   height: 45px;
-  display: flex;
-  justify-content: center;
 }
 .footer-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.footer-nav-list {
-  font-family: 'Montserrat', sans-serif; /* Назва шрифту з Figma */
-  font-weight: 600; /* Бо "Semi Bold" */
-  font-size: 16px; /* Бо "Small" (уточни розмір!) */
-  line-height: 1.5; /* Бо 150% */
-  color: #762b2b; /* HEX-код з палітри */
-}
-.footer-socials {
-  display: flex;
-  justify-content: space-between; /* розтягує елементи по краях */
-  align-items: center; /* вирівнює по вертикалі по центру */
-  padding: 20px;
-}
-.footer-copyright {
-  font-family: var(--font-family);
-  font-weight: 400;
+  width: 493px;
+  height: 24px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: var(--color-scheme-1-text);
+  color: #fff;
+}
+.footer-nav-list {
+}
+.footer-socials {
+}
+.footer-copyright {
 }
 .socials-list {
 }
