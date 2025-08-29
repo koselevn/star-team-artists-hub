@@ -28,3 +28,46 @@
 
     </div>
 </section>
+
+
+
+<h2 class="artist-info-name">${artist.strArtist}</h2>
+<div class="artist-info-container">
+    <img class="artist-info-photo" src="${artist.strArtistThumb}" alt="artist photo">
+    <div class="artist-info-text-container">
+        <div class="artist-info-main-info">
+            <div class="artist-info-text-block">
+                <p class="artist-info-info">Years active</p>
+                <p class="artist-info-data">${intFormedYear}-${intDiedYear}</p>
+            </div>
+            <div class="artist-info-text-block">
+                <p class="artist-info-info">Sex</p>
+                <p class="artist-info-data">${strGender}</p>
+            </div>
+            <div class="artist-info-text-block">
+                <p class="artist-info-info">Members</p>
+                <p class="artist-info-data">${intMembers}</p>
+            </div>
+            <div class="artist-info-text-block">
+                <p class="artist-info-info">Country</p>
+                <p class="artist-info-data">${strCountry}</p>
+            </div>
+        </div>
+
+        <div class="artist-info-biography">
+            <h4 class="artist-info-biography-title">Biography</h4>
+            <p class="artist-info-biography-text">${strBiographyEN}</p>
+        </div>
+
+        <ul class="artist-genre-list">
+            ${genreList}
+        </ul>
+    </div>
+</div>
+<h3 class="artist-info-title">Albums</h3>
+<ul>
+    <li>
+        <h4 class="artist-info-album-title">${artist.albumsList.strAlbum}</h4>
+        таблица на 3 столбца
+    </li>
+</ul>
