@@ -7,6 +7,12 @@ body {
     padding-top: 64px;
     padding-bottom: 64px;
 }
+
+.about-us-img-container img {
+    width: 100%;
+    margin: 0 auto;
+}
+
 @media (min-width: 1440px) {
     .about-us {
         padding-top: 112px;
