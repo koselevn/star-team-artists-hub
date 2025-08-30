@@ -11,5 +11,7 @@ closeButton.addEventListener('click', () => {
   menu.classList.remove('is-open');
   document.body.style.overflow = '';
 });
-
+document.querySelector('.logo').addEventListener('click', function() {
+  window.location.href = 'index.html';
+});
 

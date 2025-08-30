@@ -46,6 +46,7 @@
 
 .logo{
     fill: #fff;
+    cursor: pointer;
 }
 
    
@@ -127,12 +128,6 @@ fill: #fff;
 
 
 
-
-
-.logo:focus svg{
-
-    color: #764191;
-}
 /* Tablet */
 @media (min-width: 768px) {
     .header-nav-section {
