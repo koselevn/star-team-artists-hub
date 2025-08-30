@@ -1,10 +1,5 @@
 const artistsEl = document.querySelector(".artists-list");
-// const artistInfoEl = document.querySelector(".artists-info");
-
-
-
-
-
+const artistInfoEl = document.querySelector(".artists-info");
 
 export function createArtists(artists) {
     const markup = artists.map(artist => {
