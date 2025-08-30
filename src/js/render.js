@@ -1,6 +1,11 @@
 const artistsEl = document.querySelector(".artists-list");
 // const artistInfoEl = document.querySelector(".artists-info");
 
+
+
+
+
+
 export function createArtists(artists) {
     const markup = artists.map(artist => {
         const genreList = artist.genres && artist.genres.length > 0
