@@ -154,6 +154,9 @@ fill: #fff;
    .burger-btn{
 display: none;
    }
+   .header-logo-section{
+    left: 0;
+   }
 }
 
 /* Desktop */
