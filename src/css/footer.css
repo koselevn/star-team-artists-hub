@@ -17,6 +17,11 @@
   list-style: none;
   padding: 0;
   margin-bottom: 80px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
 }
 .footer-right {
   display: flex;
@@ -27,6 +32,11 @@
 }
 .copyright {
   margin-bottom: 80px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
 }
 .socials-list {
   display: flex;
