@@ -4,8 +4,11 @@
   align-items: center;
   justify-content: center;
 }
+
 .footer-logo {
+  margin-bottom: 0;
 }
+
 .icon-logo {
   width: 116px;
   height: 45px;
@@ -29,9 +32,9 @@
   width: 100%;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 32px;
+  margin-bottom: 80px;
 }
 .copyright {
-  margin-bottom: 80px;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -45,5 +48,26 @@
   padding: 0;
   margin: 0;
   fill: #fff;
-  margin-bottom: 80px;
+}
+
+/* Потім телефон */
+@media (max-width: 767px) {
+  .footer-nav-list {
+    flex-direction: column;
+    margin-bottom: 48px;
+  }
+
+  .footer-right {
+    flex-direction: column-reverse;
+    margin-bottom: 48px;
+  }
+
+  .socials-list {
+    margin-bottom: 32px;
+    justify-content: center;
+  }
+
+  .copyright {
+    text-align: center;
+  }
 }
