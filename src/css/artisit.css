@@ -1,0 +1,210 @@
+/* ===============================
+   Базовые стили
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+/* ===============================
+   Контейнер секции
+================================ */
+.container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ===============================
+   Заголовки
+================================ */
+.artists-section {
+    padding: 60px 0;
+}
+
+.artists-label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+.artists-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    max-width: 300px;
+    text-align: left;
+}
+
+/* ===============================
+   Список карточек
+================================ */
+.artists-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+/* ===============================
+   Карточка Артистов
+================================ */
+.artist-card {
+    background: #1a1a20;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 16px;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-6px);
+}
+
+.artist-photo {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.artist-name {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.artist-info {
+    font-size: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    max-height: 42px;
+    /* ограничение в 2 строки */
+}
+
+/* ===============================
+   Жанры
+================================ */
+.artist-genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.genre-tag {
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ===============================
+   Кнопка "Load More"
+================================ */
+.load-more {
+    margin: 40px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #7a3bb2;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.load-more:hover {
+    background: #592b84;
+}
+
+/* ===============================
+   Лоадер
+================================ */
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ===============================
+   Адаптив
+================================ */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    .artists-title {
+        font-size: 36px;
+        max-width: 600px;
+    }
+
+    .artist-photo {
+        height: 240px;
+    }
+
+    .artist-card {
+        max-width: 340px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .artists-section {
+        padding: 100px 0;
+    }
+
+    .artists-title {
+        font-size: 48px;
+    }
+
+    .artist-photo {
+        height: 280px;
+    }
+
+    .artist-card {
+        max-width: 400px;
+    }
+
+    .load-more {
+        margin-top: 60px;
+    }
+}
