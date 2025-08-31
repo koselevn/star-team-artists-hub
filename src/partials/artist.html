@@ -1,75 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artists Section</title>
-    <link rel="stylesheet" href="artists.css" />
-  </head>
-  <body>
-    <!-- Раздел артистов -->
-    <section id="artists" class="artists-section">
-      <div class="container">
-        <!-- Заголовки -->
-        <h2 class="artists-label">Artists</h2>
-        <h3 class="artists-title">Discover Your Favorite Artists</h3>
+<!-- ====== СЕКЦИЯ С АРТИСТАМИ ====== -->
+<section id="artists" class="artists-block">
+  <div class="wrap-artists">
+    <!-- Главный заголовок -->
+    <h2 class="heading-main">Artists</h2>
+    <!-- Подзаголовок -->
+    <h3 class="heading-sub">Find Your Next Favorite Artist</h3>
 
-        <!-- Список карточек -->
-        <ul class="artists-list">
-          <!-- Карточка артиста -->
-          <li class="artist-card">
-            <img
-              src="https://picsum.photos/400/250?random=1"
-              alt="Artist 1"
-              class="artist-photo"
-            />
-            <h4 class="artist-name">Lana Doe</h4>
-            <p class="artist-info">
-              An indie singer-songwriter with emotional and deep lyrics.
-            </p>
-            <div class="artist-genres">
-              <span class="genre-tag">Indie</span>
-              <span class="genre-tag">Pop</span>
-            </div>
-          </li>
+    <!-- Список карточек артистов -->
+    <ul class="artist-cards" id="artist-cards"></ul>
 
-          <!-- Карточка артиста -->
-          <li class="artist-card">
-            <img
-              src="https://picsum.photos/400/250?random=2"
-              alt="Artist 2"
-              class="artist-photo"
-            />
-            <h4 class="artist-name">Mark Smith</h4>
-            <p class="artist-info">
-              A jazz guitarist who blends classics with modern sound.
-            </p>
-            <div class="artist-genres">
-              <span class="genre-tag">Jazz</span>
-              <span class="genre-tag">Fusion</span>
-            </div>
-          </li>
-        </ul>
+    <!-- Кнопка загрузки дополнительных карточек -->
+    <button class="btn-more is-hidden">
+      Show More
+      <svg
+        class="icon-arrow"
+        width="22"
+        height="22"
+        viewBox="0 0 24 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          d="M18.707 13.6006L17.293 12.1866L13 16.4796V6.89355H11V16.4796L6.70697 12.1866L5.29297 13.6006L12 20.3076L18.707 13.6006Z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  </div>
+</section>
 
-        <!-- Кнопка загрузки -->
-        <button class="load-more">
-          Load More
-          <svg
-            class="icon-arrow"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
-            <path d="M12 16L6 10H18L12 16Z" fill="white" />
-          </svg>
-        </button>
-      </div>
-    </section>
-
-    <!-- Лоадер -->
-    <div class="loader-overlay hidden">
-      <span class="loader"></span>
-    </div>
-  </body>
-</html>
+<!-- ====== ЛОАДЕР ПРИ ЗАГРУЗКЕ ====== -->
+<div class="preloader-box is-hidden">
+  <span class="spinner"></span>
+</div>

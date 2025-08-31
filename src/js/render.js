@@ -1,6 +1,5 @@
-// render.js
 // Импортируем функцию для рендера списка артистов
-import { createArtists } from "./artist.js";
+import { createArtists } from "./artists.js";
 
 // Элемент для модалки с подробной информацией
 const artistInfoEl = document.querySelector(".modal-artist-content");

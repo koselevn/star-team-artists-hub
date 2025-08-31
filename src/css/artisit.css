@@ -1,156 +1,176 @@
-/* ===============================
-   Базовые стили
-================================ */
+@import 'izitoast/dist/css/iziToast.min.css';
+
+/* ============ 0. БАЗОВЫЕ СБРОСЫ ============ */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-
-.hidden {
-    display: none !important;
-}
-
-/* ===============================
-   Контейнер секции
-================================ */
-.container {
+/* Универсальный контейнер */
+.wrap-musicians {
     width: 100%;
-    max-width: 320px;
+    max-width: 288px;
     margin: 0 auto;
     padding: 0 16px;
 }
 
-/* ===============================
-   Заголовки
-================================ */
-.artists-section {
-    padding: 60px 0;
+/* ============ 1. СЕКЦИЯ АРТИСТОВ ============ */
+.musicians-block {
+    padding: 64px 0;
 }
 
-.artists-label {
-    font-size: 16px;
+/* ============ 2. ЗАГОЛОВКИ ============ */
+.heading-main {
+    text-align: left;
+    margin-bottom: 16px;
     font-weight: 600;
-    margin-bottom: 12px;
-    text-align: left;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
 }
 
-.artists-title {
-    font-size: 28px;
+.heading-sub {
+    text-align: left;
+    margin: 0 0 32px 0;
+    font-family: 'Epilogue', sans-serif;
     font-weight: 700;
-    margin-bottom: 32px;
-    max-width: 300px;
-    text-align: left;
+    font-size: 44px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #fff;
+    width: 100%;
+    max-width: 288px;
 }
 
-/* ===============================
-   Список карточек
-================================ */
-.artists-list {
+/* ============ 3. СПИСОК КАРТОЧЕК ============ */
+.musician-cards {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
     justify-content: center;
-}
-
-/* ===============================
-   Карточка Артистов
-================================ */
-.artist-card {
-    background: #1a1a20;
-    border-radius: 12px;
-    overflow: hidden;
-    padding: 16px;
+    /* карточки центрируются */
+    gap: 32px;
     width: 100%;
-    max-width: 300px;
-    transition: transform 0.3s ease;
 }
 
-.artist-card:hover {
-    transform: translateY(-6px);
-}
-
-.artist-photo {
+/* ============ 4. КАРТОЧКИ АРТИСТОВ ============ */
+.musician-card {
     width: 100%;
-    height: 180px;
+    max-width: 288px;
+    background-color: #060307;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 16px;
+}
+
+.musician-photo {
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 16px;
+    object-position: center 15%;
+    display: block;
+    border-radius: 16px;
+    width: 100%;
+    height: 177px;
 }
 
-.artist-name {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.artist-info {
-    font-size: 14px;
-    margin-bottom: 12px;
-    overflow: hidden;
-    max-height: 42px;
-    /* ограничение в 2 строки */
-}
-
-/* ===============================
-   Жанры
-================================ */
-.artist-genres {
+.musician-genres {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
 }
 
-.genre-tag {
-    font-size: 13px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* ===============================
-   Кнопка "Load More"
-================================ */
-.load-more {
-    margin: 40px auto 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    background: #7a3bb2;
-    color: #fff;
-    font-size: 16px;
+.genre-chip {
     font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    height: 32px;
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+}
+
+.musician-name {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.musician-info {
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* ограничение по строкам */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+/* ============ 5. КНОПКИ ============ */
+.btn-more {
+    border-radius: 12px;
+    padding: 10px 24px;
+    width: 288px;
+    height: 47px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #764191;
+    box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
+        inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+        inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+        inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: none;
+    gap: 12px;
     cursor: pointer;
-    transition: background 0.3s ease;
 }
 
-.load-more:hover {
-    background: #592b84;
+.btn-more:hover,
+.btn-more:focus {
+    background-color: #55236e;
+    transition: background-color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* ===============================
-   Лоадер
-================================ */
-.loader-overlay {
+.icon-arrow {
+    width: 20px;
+    height: 20px;
+}
+
+/* ============ 6. ЛОАДЕР ============ */
+.preloader-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
 }
 
-.loader {
-    width: 40px;
-    height: 40px;
-    border: 4px solid #fff;
-    border-top-color: transparent;
+.spinner {
+    display: block;
+    margin: 20px auto;
+    width: 32px;
+    height: 32px;
+    border: 4px solid #ccc;
+    border-top-color: #000;
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -161,50 +181,72 @@
     }
 }
 
-/* ===============================
-   Адаптив
-================================ */
-@media (min-width: 768px) {
-    .container {
-        max-width: 720px;
+/* ============ 7. УТИЛИТЫ ============ */
+.is-hidden {
+    display: none !important;
+}
+
+/* ============ 8. АДАПТИВНОСТЬ ============ */
+@media screen and (min-width: 768px) {
+    .wrap-musicians {
+        max-width: 704px;
     }
 
-    .artists-title {
-        font-size: 36px;
-        max-width: 600px;
+    .musician-photo {
+        height: 432px;
+        margin-bottom: 24px;
     }
 
-    .artist-photo {
-        height: 240px;
+    .btn-more {
+        width: 340px;
+        margin-top: 64px;
     }
 
-    .artist-card {
-        max-width: 340px;
+    .musician-card {
+        gap: 0;
+        width: 100%;
+        max-width: 704px;
+        min-width: 450px;
+    }
+
+    .musician-cards {
+        gap: 32px;
+    }
+
+    .musician-info {
+        margin-bottom: 24px;
+    }
+
+    .heading-sub {
+        font-size: 44px;
+        max-width: 580px;
     }
 }
 
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1140px;
+@media screen and (min-width: 1440px) {
+    .wrap-musicians {
+        max-width: 1312px;
     }
 
-    .artists-section {
-        padding: 100px 0;
+    .musicians-block {
+        padding: 112px 0;
     }
 
-    .artists-title {
-        font-size: 48px;
+    .heading-sub {
+        font-size: 60px;
+        max-width: 523px;
+        margin-bottom: 80px;
     }
 
-    .artist-photo {
-        height: 280px;
+    .musician-photo {
+        height: 393px;
     }
 
-    .artist-card {
-        max-width: 400px;
+    .musician-card {
+        width: calc((100% - 32px) / 2);
     }
 
-    .load-more {
-        margin-top: 60px;
+    .btn-more {
+        width: 170px;
     }
 }
