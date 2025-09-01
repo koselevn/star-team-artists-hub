@@ -43,7 +43,7 @@
 }
 
 .hero-picture {
-  position: relative; /* чтобы псевдоэлемент мог позиционироваться */
+  position: relative;
   display: block;
   width: 100%;
 }
@@ -54,9 +54,9 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 40%; /* регулируй высоту затемнения */
+  height: 40%; 
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
-  pointer-events: none; /* чтобы затемнение не мешало кликам */
+  pointer-events: none; 
 }
 
 .hero-picture img {
