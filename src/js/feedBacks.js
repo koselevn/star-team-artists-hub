@@ -33,6 +33,7 @@ async function renderAllFeedbacks() {
         modules: [Navigation, Autoplay, Pagination],
 
         slidesPerView: 1,
+        centeredSlides: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -42,9 +43,25 @@ async function renderAllFeedbacks() {
           dynamicBullets: true,
           dynamicMainBullets: 3,
         },
-        loop: true,
 
-        spaceBetween: 30,
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+            loop: false,
+            spaceBetween: 35,
+          },
+
+          768: {
+            slidesPerView: 1,
+
+            loop: false,
+          },
+
+          1440: {
+            slidesPerView: 1,
+            loop: false,
+          },
+        },
       });
     }
   } catch (error) {
