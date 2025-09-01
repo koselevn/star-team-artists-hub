@@ -15,3 +15,11 @@ document.querySelector('.logo').addEventListener('click', function() {
   window.location.href = 'index.html';
 });
 
+const header = document.querySelector('.page-header');
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const maxFade = 250; 
+  const opacity = Math.max(0, 1 - scrollY / maxFade);
+  header.style.setProperty('--gradient-opacity', opacity);
+});
