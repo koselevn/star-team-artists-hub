@@ -25,11 +25,7 @@ export function createArtists(artists) {
     </button>
     `;
     }).join('');
-    artistsEl.insertAdjacentHTML('beforeend', markup);
-
-
-    console.log(markup);
-    
+    artistsEl.insertAdjacentHTML('beforeend', markup);    
 }
 
 
@@ -44,8 +40,7 @@ function msToMinSec(ms) {
 
 
 
-export function createArtistInfo(artists) {
-    const markup = artists.map(artist => {
+export function createArtistInfo(artist) {    
         const genreList = !artist.genres || artist.genres.length === 0
             ? '<li></li>'
             : artist.genres.map(genre => `<li class="artist-genre-item">${genre}</li>`).join('');
@@ -88,8 +83,7 @@ export function createArtistInfo(artists) {
             }).join('');
 
 
-    
-        return `
+    const markup = `
 <h2 class="modal-artist-name">${artist.strArtist}</h2>
       <div class="modal-artist-about">
         <img
@@ -122,51 +116,6 @@ export function createArtistInfo(artists) {
             ${albumList}        
       </ul>
     `;
-    }).join('');
     artistInfoEl.innerHTML = markup;
-
-    console.log(markup);
 }
 
-
-
-
-
-const artists = {
-  "_id": "65ada227af9f6d155db46908",
-  "strArtistThumb": "https://ftp.goit.study/img/musicbox/artist/strArtistThumb_qvuxvs1347997318.jpg",
-  "strArtist": "U2",
-  "strLabel": "Island",
-  "intFormedYear": "1976",
-  "intDiedYear": "null",
-  "genres": [
-    "Rock",
-    "Rock/Pop"
-  ],
-  "strGender": "Male",
-  "intMembers": "4",
-  "strCountry": "Dublin, Ireland",
-  "strBiographyEN": "U2 are an Irish rock band from Dublin, formed in 1976. The group consists of Bono (lead vocals and rhythm guitar)...",
-  "albumsList": [
-    {
-      "_id": "65ada232af9f6d1bc9a32189",
-      "strAlbum": "Children of the Revolution",
-      "intYearReleased": "2002",
-      "tracks": [
-        {
-          "_id": "65ada232af9f6d155db46975",
-          "strTrack": "Two Hearts Beat as One",
-          "strArtist": "U2",
-          "intDuration": "218400",
-          "movie": "https://www.youtube.com/watch?v=8Iaz-wtKYpo or null"
-        }
-      ]
-    }
-  ]
-}
-
-
-createArtists([artists])
-
-
-createArtistInfo([artists])
