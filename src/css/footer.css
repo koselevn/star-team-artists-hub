@@ -51,7 +51,7 @@
 }
 
 /* Потім телефон */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .footer-nav-list {
     flex-direction: column;
     margin-bottom: 48px;
