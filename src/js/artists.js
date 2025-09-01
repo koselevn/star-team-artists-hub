@@ -1,6 +1,6 @@
 import { renderArtists, showLoadMoreButton, hideLoadMoreButton, showLoader, hideLoader } from './render.js';
 import { getArtists } from './api.js';
-// import { openArtistModal } from './modal.js';
+// import { openArtistModal } from './modal.js';      //<--------- будет мадалка
 import iziToast from 'izitoast';
 
 const LIMIT = 8;
@@ -42,7 +42,7 @@ async function initArtists() {
     }
 }
 
-// Обработка клика по кнопке "Show More"
+// Обработка клика по кнопке "More"
 async function onLoadMoreBtnClick(event) {
     event.target.blur();
     currentPage++;
@@ -63,7 +63,7 @@ async function onLoadMoreBtnClick(event) {
         if (data.totalArtists && currentPage * LIMIT >= data.totalArtists) {
             iziToast.info({
                 title: '',
-                message: 'Вы просмотрели всех артистов.',
+                message: 'You see all Artists.',
                 position: 'topRight',
                 timeout: 4000,
                 titleColor: '#fff',
@@ -77,7 +77,7 @@ async function onLoadMoreBtnClick(event) {
         console.error(err);
         iziToast.error({
             title: 'Error',
-            message: 'Не удалось загрузить артистов.',
+            message: 'Houston we have a problem.',
             position: 'topRight',
             timeout: 3000,
             titleColor: '#fff',
@@ -97,7 +97,7 @@ function onArtistCardClick(event) {
     const artistId = learnMoreBtn.dataset.artistId;
     if (!artistId) return;
 
-    // openArtistModal(artistId);
+    // openArtistModal(artistId);    //<--------------- Open Modal Window
 }
 
 document.addEventListener('DOMContentLoaded', initArtists);
