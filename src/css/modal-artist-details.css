@@ -1,14 +1,12 @@
 /* Modal artist details */
+
 .modal-artist-overlay {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
   background-color: rgba(0, 0, 0, 0.25);
-  padding: 64px 16px;
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 999;
+  overflow: auto;
+  z-index: 9999;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -20,15 +18,23 @@
   visibility: visible;
   pointer-events: auto;
 }
+
 .modal-artist {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 64px;
+
   background-color: #060307;
   border-radius: 16px;
   padding: 52px 8px;
-  width: 288px;
-  height: 100%;
+  max-width: 288px;
+  max-height: calc(100% - 128px);
   overflow-y: auto;
+  width: 100%;
 }
+
 .modal-artist-close-btn {
   position: absolute;
   top: 16px;
@@ -74,8 +80,12 @@
   font-size: 18px;
   line-height: 1.5;
 }
+
 .modal-artist-title-descr {
   font-weight: 400;
+  margin-bottom: 16px;
+}
+.modal-artist-title-descr:last-child {
   margin-bottom: 16px;
 }
 .modal-artist-list {
@@ -99,6 +109,7 @@
   margin-top: 16px;
   margin-bottom: 16px;
 }
+
 .modal-artist-album {
   font-family: 'IBM Plex Sans', sans-serif;
   color: #fff;
@@ -108,7 +119,8 @@
 }
 .album {
   padding: 14px 11px;
-  max-width: 100%;
+  max-width: 272px;
+  width: 100%;
   background-color: #1e1c1f;
   border-radius: 16px;
 }
@@ -184,190 +196,79 @@
 }
 .track-link:hover {
   transform: scale(1.15);
-} /* Modal artist details */
-.modal-artist-overlay {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: rgba(0, 0, 0, 0.25);
-  padding: 64px 16px;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.modal-artist-overlay.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+@media only screen and (min-width: 768px) {
+  .modal-artist {
+    min-width: 702px;
+    padding: 64px 24px;
+  }
+  .modal-artist-name {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+  .modal-artist-info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .modal-artist-info div:nth-child(1),
+  .modal-artist-info div:nth-child(3) {
+    width: 146px;
+  }
+  .modal-artist-info div:nth-child(2),
+  .modal-artist-info div:nth-child(4) {
+    width: 484px;
+  }
+  .modal-artist-album-title {
+    margin-top: 48px;
+  }
+  .modal-artist-album {
+    flex-direction: unset;
+    flex-wrap: wrap;
+  }
+  .album {
+    max-width: 311px;
+  }
+  .tracks-header span:nth-child(1) {
+    flex: 0 0 107px;
+  }
+  .tracks-header span:nth-child(2) {
+    flex: 0 0 125px;
+  }
+  .track {
+    padding: 4px 11px;
+  }
+  .track span:nth-child(2) {
+    flex: 0 0 107px;
+  }
 }
-.modal-artist {
-  position: relative;
-  background-color: #060307;
-  border-radius: 16px;
-  padding: 52px 8px;
-  width: 288px;
-  height: 100%;
-  overflow-y: auto;
-}
-.modal-artist-close-btn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  border: none;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.modal-close-icon {
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-.modal-artist-close-btn:hover .modal-close-icon,
-.modal-artist-close-btn:focus .modal-close-icon {
-  transform: scale(1.2);
-}
-.modal-artist-close-btn:active .modal-close-icon {
-  transform: scale(0.95);
-}
-.modal-artist-content {
-  color: #fff;
-}
-.modal-artist-name {
-  font-family: 'Epilogue', sans-serif;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  text-align: center;
-  margin-bottom: 16px;
-}
-.modal-artist-photo {
-  margin-bottom: 32px;
-}
-.modal-artist-title,
-.modal-artist-title-descr {
-  font-family: 'IBM Plex Sans', sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 1.5;
-}
-.modal-artist-title-descr {
-  font-weight: 400;
-  margin-bottom: 16px;
-}
-.modal-artist-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.modal-artist-list-item {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 6px;
-  padding: 4px 10px;
-  width: auto;
-  height: 32px;
-}
-.modal-artist-album-title {
-  font-family: 'Epilogue', sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-.modal-artist-album {
-  font-family: 'IBM Plex Sans', sans-serif;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-.album {
-  padding: 14px 11px;
-  max-width: 100%;
-  background-color: #1e1c1f;
-  border-radius: 16px;
-}
-.album-title {
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.5;
-  margin-bottom: 12px;
-}
-.tracks-header {
-  display: flex;
-  font-weight: 600;
-  font-size: 8px;
-  line-height: 1.5;
-  max-width: 100%;
-  max-height: 20px;
-  border-radius: 8px;
-  padding: 4px 12px 4px 12px;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-.tracks-header span:nth-child(1) {
-  flex: 0 0 97px;
-}
-.tracks-header span:nth-child(2) {
-  flex: 0 0 102px;
-  text-align: center;
-}
-.tracks-header span:nth-child(3) {
-  flex: 0 0 35px;
-  text-align: center;
-}
-.track-list {
-  display: flex;
-  flex-direction: column;
-}
-.track-list .track:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.track {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 11px;
-  background-color: transparent;
-  border-radius: 8px;
-}
-.track span:nth-child(1) {
-  flex: 0 0 97px;
-}
-.track span:nth-child(2) {
-  flex: 0 0 74px;
-}
-.track-name {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5;
-}
-.track-time {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.5;
-  text-align: center;
-}
-.track-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 24px;
-  height: 24px;
-  background-color: transparent;
-  transition: transform 0.2s ease-in-out;
-}
-.track-link:hover {
-  transform: scale(1.15);
+@media (min-width: 1440px) {
+  .modal-artist {
+    min-width: 1312px;
+    padding: 64px 64px;
+  }
+  .modal-artist-about {
+    display: flex;
+    gap: 32px;
+  }
+  .modal-artist-photo {
+    max-width: 576px;
+    margin-bottom: 0;
+  }
+  .modal-artist-info div:nth-child(2),
+  .modal-artist-info div:nth-child(4) {
+    width: 406px;
+  }
+  .album {
+    max-width: 272px;
+  }
+  .tracks-header span:nth-child(1) {
+    flex: 0 0 97px;
+  }
+  .tracks-header span:nth-child(2) {
+    flex: 0 0 102px;
+    text-align: center;
+  }
+  .track span:nth-child(2) {
+    flex: 0 0 74px;
+  }
 }
