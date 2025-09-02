@@ -1,0 +1,327 @@
+@import 'izitoast/dist/css/iziToast.min.css';
+
+/* ============  БАЗОВЫЕ СБРОСЫ ============ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Универсальный контейнер */
+.wrap-artists {
+    width: 100%;
+    max-width: 288px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* ============ СЕКЦИЯ АРТИСТОВ ============ */
+.artists-block {
+    padding: 64px 0;
+}
+
+/* ============ ЗАГОЛОВКИ ============ */
+.heading-main {
+    text-align: left;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.heading-sub {
+    text-align: left;
+    margin: 0 0 32px 0;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: #fff;
+    width: 100%;
+    max-width: 288px;
+}
+
+/* ============ СПИСОК КАРТОЧЕК ============ */
+.artist-cards {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+}
+
+/* ============ КАРТОЧКИ АРТИСТОВ ============ */
+.artist-card {
+    width: 100%;
+    max-width: 288px;
+    background-color: #060307;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.artist-photo {
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+    border-radius: 16px;
+    width: 100%;
+    height: 177px;
+}
+
+.artist-genre-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.genre-chip {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+    height: 32px;
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+}
+
+.artist-name {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.artist-info {
+    overflow: hidden;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+/* ============ КНОПКИ ============ */
+.btn-more {
+    border-radius: 12px;
+    padding: 10px 24px;
+    width: 288px;
+    height: 47px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #764191;
+    box-shadow: 0 1px 2px 0 rgba(6, 3, 7, 0.05),
+        inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2),
+        inset 0 0 0 1px rgba(6, 3, 7, 0.15),
+        inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
+        inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: none;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.btn-more:hover,
+.btn-more:focus {
+    background-color: #55236e;
+    transition: background-color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.artist-button {
+    border-radius: 12px;
+    padding: 10px 24px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.artist-button:hover,
+.artist-button:focus {
+    background-color: transparent;
+    transition: background-color 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-arrow,
+.artist-button-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ============ ЛОАДЕР ============ */
+.preloader-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.spinner {
+    display: block;
+    margin: 20px auto;
+    width: 32px;
+    height: 32px;
+    border: 4px solid #ccc;
+    border-top-color: #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ============ МОДАЛЬНОЕ ОКНО ============ */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #060307;
+    padding: 20px;
+    border-radius: 16px;
+    color: #fff;
+    max-width: 600px;
+    width: 90%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal img {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+.modal h2 {
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.modal p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.close-modal {
+    background: #764191;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    background: #55236e;
+}
+
+/* ============ УТИЛИТЫ ============ */
+.is-hidden {
+    display: none !important;
+}
+
+/* ============ АДАПТИВНОСТЬ ============ */
+@media screen and (min-width: 768px) {
+    .wrap-artists {
+        max-width: 704px;
+    }
+
+    .artist-photo {
+        height: 432px;
+        margin-bottom: 24px;
+    }
+
+    .btn-more {
+        width: 340px;
+        margin-top: 64px;
+    }
+
+    .artist-card {
+        gap: 0;
+        width: 100%;
+        max-width: 704px;
+        min-width: 450px;
+    }
+
+    .artist-cards {
+        gap: 32px;
+    }
+
+    .artist-info {
+        margin-bottom: 24px;
+    }
+
+    .heading-sub {
+        font-size: 44px;
+        max-width: 580px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .wrap-artists {
+        max-width: 1312px;
+    }
+
+    .artists-block {
+        padding: 112px 0;
+    }
+
+    .heading-sub {
+        font-size: 60px;
+        max-width: 523px;
+        margin-bottom: 80px;
+    }
+
+    .artist-photo {
+        height: 393px;
+    }
+
+    .artist-card {
+        width: calc((100% - 32px) / 2);
+    }
+
+    .btn-more {
+        width: 170px;
+    }
+}

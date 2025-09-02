@@ -18,7 +18,11 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.11.0",
+
     "swiper": "^11.2.10",
+
+    "izitoast": "^1.4.0",
+
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-html-inject": "^1.1.2"
   }
