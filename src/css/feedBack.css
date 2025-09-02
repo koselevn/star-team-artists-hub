@@ -1,6 +1,8 @@
 .feedback-section {
-    padding: 112px 0;
+    padding: 64px 0;
 }
+
+
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -47,20 +49,91 @@
 
 .swiper-slide h1 {
         font-weight: 700;
+        font-family: 'IBM Plex Sans', sans-serif;
         font-size: 18px;
         line-height: 140%;
         letter-spacing: -0.01em;
         text-align: center;
         margin-bottom: 32px;
 }
+.swiper-slide p{
+    font-family: 'IBM Plex Sans', sans-serif;
+}
 
-
-.swiper-pagination {
-    bottom: 5px !important;
-
+.custom-pagination {
+    display: flex !important;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
 }
 
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+.feedback-rating {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 32px;
+}
+
+.star {
+    font-size: 24px;
+    color: #D9D9D9;
+}
+
+
+.slide-feedback {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: -0.01em;
+    text-align: center;
+    margin-bottom: 16px;
+    font-style: italic;
+    max-width: 800px;
+}
+
+.feedback-author {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--color-scheme-1-text);
+}
+
+
+
+
+.custom-pagination .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-pagination .dot.active {
+    background: #764191;
+}
+
+
+.swiper-button-disabled {
+    opacity: 0.35;
+    pointer-events: none;
+}
 
     
 @media screen and (min-width:768px){
@@ -68,7 +141,12 @@
                 .feedback-section {
                     padding: 64px 0;
                 }
-        
+                
+                                .feedback-rating {
+                                    display: flex;
+                                    justify-content: center;
+                                    gap: 10px;
+                                    margin-bottom: 80px;               }
         
                 .swiper {
                     width: 100%;
@@ -111,7 +189,8 @@
                 }
 
                 .swiper-slide p { 
-                    font-family: var(--font-family);
+                    font-family: 'IBM Plex Sans',
+                        sans-serif;
                         font-weight: 600;
                         font-size: 18px;
                         line-height: 150%;
@@ -139,17 +218,34 @@
                     content: none !important;
                 }
         
-                .swiper-pagination {
-                    bottom: 34px !important;
-                  
-        
-                }
+                                .custom-pagination {
+                                    display: flex !important;
+                                    justify-content: center;
+                                    gap: 8px;
+                                    margin-top: 20px;
+                                }
+
+                                .star {
+                                    font-size: 28px;
+                                }
+                
+                                .slide-feedback {
+                                    font-size: 26px;
+                                }
+                
+                                .feedback-author {
+                                    font-size: 18px;               }
 }
 
 @media (min-width: 1440px){
     .feedback-section {
             padding: 112px 0;
         }
+                .feedback-rating {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    margin-bottom: 32px;       }
     
     
         .swiper {
@@ -177,6 +273,8 @@
     
         .swiper-slide h1 {
             font-weight: 700;
+            font-family: 'IBM Plex Sans',
+                sans-serif;
             font-size: 32px;
             line-height: 130%;
             letter-spacing: -0.01em;
@@ -193,7 +291,7 @@
             padding: 20px;
             width: 12px !important;
             height: 12px !important;
-            margin-bottom: 75px;
+            margin-bottom: 59px;
             margin-top: calc(-63px - (var(--swiper-navigation-size) /2)) !important;
         }
     
@@ -202,9 +300,13 @@
             content: none !important;
         }
     
-        .swiper-pagination {
-            bottom: 5px !important;
-    
-        }
+             
+        
+                .star {
+                    font-size: 32px;
+                }
+        
+                .slide-feedback {
+                    font-size: 32px;       }
 }
 
