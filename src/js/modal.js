@@ -1,5 +1,5 @@
 import { createArtistInfo } from './render.js';
-import { getArtistById } from './api.js';
+import { getArtists } from './api.js';
 
 const modalOverlay = document.querySelector('.modal-artist-overlay');
 const modalContent = document.querySelector('.modal-artist-content');
