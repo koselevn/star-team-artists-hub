@@ -13,7 +13,7 @@ function renderFeedbacks(data) {
     .map(
       feedback =>
         `<li class="swiper-slide">
-        <h1>${feedback.descr}</h1>
+        <h1 class="slide-feedback">${feedback.descr}</h1>
         <p>${feedback.name}</p>
       </li>`
     )
@@ -45,15 +45,13 @@ async function renderAllFeedbacks() {
         },
 
         breakpoints: {
-          320: {
+          0: {
             slidesPerView: 1,
             loop: false,
-            spaceBetween: 35,
           },
 
           768: {
             slidesPerView: 1,
-
             loop: false,
           },
 

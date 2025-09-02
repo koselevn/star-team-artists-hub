@@ -1,5 +1,5 @@
 .feedback-section {
-    padding: 64px 0;
+    padding: 112px 0;
 }
 
 .swiper-button-next::after,
@@ -17,7 +17,7 @@
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px !important;
+    padding: 34px !important;
     overflow: hidden;
     
 }
@@ -35,15 +35,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    visibility: hidden;
-    max-width: 288px;
-    height: 209px !important;
+    opacity: 1 !important;
+        transform: scale(1) !important;
 }
 
-.swiper-slide-active {
-    visibility: visible !important;
-    opacity: 1 !important;
+.swiper-slide:not(.swiper-slide-active) {
+    visibility: hidden;
 }
+
+
 
 .swiper-slide h1 {
         font-weight: 700;
@@ -61,77 +61,12 @@
 }
 
 
-@media screen and (min-width:320px){
-    .feedback-section {
-            padding: 64px 0;
-        }
-    
-        .swiper-button-next::after,
-        .swiper-button-prev::after {
-            content: none !important;
-        }
-    
-        .button-left,
-        .button-right {
-            display: none !important;
-        }
-    
-    
-        .swiper {
-            width: 100%;
-            height: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 10px !important;
-            overflow: hidden;
-    
-        }
-    
-        .swiper-pagination-bullet {
-            background-color: #ffffff !important;
-        }
-    
-    
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: transparent;
-            display: flex !important;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            visibility: hidden;
-            max-width: 288px;
-            height: 209px !important;
-        }
-    
-        .swiper-slide-active {
-            visibility: visible !important;
-            opacity: 1 !important;
-        }
-    
-        .swiper-slide h1 {
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 140%;
-            letter-spacing: -0.01em;
-            text-align: center;
-            margin-bottom: 32px;
-        }
-    
-    
-        .swiper-pagination {
-            bottom: 5px !important;
-    
-        }
-    }
-    
-   
 
-@media screen and (min-width:738px){
+    
+@media screen and (min-width:768px){
 
                 .feedback-section {
-                    padding: 112px 0;
+                    padding: 64px 0;
                 }
         
         
@@ -156,16 +91,31 @@
                     justify-content: center;
                     align-items: center;
                     flex-direction: column;
+                    opacity: 1 !important;
+                    transform: scale(1) !important;
+                   
+                }
+
+                .swiper-slide:not(.swiper-slide-active) {
+                    visibility: hidden;              
                 }
         
                 .swiper-slide h1 {
-                    font-weight: 700;
-                    font-size: 32px;
-                    line-height: 130%;
-                    letter-spacing: -0.01em;
-                    text-align: center;
-                    max-width: 866px;
-                    margin-bottom: 32px;
+                   
+                        font-weight: 700;
+                        font-size: 26px;
+                        line-height: 140%;
+                        letter-spacing: -0.01em;
+                        text-align: center;
+                        max-width: 514px;
+                }
+
+                .swiper-slide p { 
+                    font-family: var(--font-family);
+                        font-weight: 600;
+                        font-size: 18px;
+                        line-height: 150%;
+                        color: var(--color-scheme-1-text);
                 }
         
                 .swiper-button-next,
@@ -173,12 +123,16 @@
                     all: unset;
                     border: 1px solid rgb(148, 147, 147);
                     border-radius: 8px;
-                    padding: 20px;
+                    padding: 12px;
                     width: 12px !important;
                     height: 12px !important;
                     margin-bottom: 75px;
-                    margin-top: calc(-63px - (var(--swiper-navigation-size) /2)) !important;
+                    margin-top: calc(30px - (var(--swiper-navigation-size) /2)) !important;
                 }
+                                .swiper-button-next,
+                                .swiper-button-prev {
+                                    display: flex !important;
+                                }
         
                 .swiper-button-next::after,
                 .swiper-button-prev::after {
@@ -186,7 +140,8 @@
                 }
         
                 .swiper-pagination {
-                    bottom: 5px !important;
+                    bottom: 34px !important;
+                  
         
                 }
 }
