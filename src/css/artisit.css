@@ -203,24 +203,9 @@
 }
 
 /* ============ МОДАЛЬНОЕ ОКНО ============ */
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #060307;
-    padding: 20px;
-    border-radius: 16px;
-    color: #fff;
-    max-width: 600px;
-    width: 90%;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    max-height: 80vh;
-    overflow-y: auto;
-}
 
-.modal img {
+
+/* .modal img {
     width: 100%;
     max-width: 200px;
     border-radius: 16px;
@@ -241,9 +226,9 @@
     line-height: 1.5;
     color: #fff;
     margin-bottom: 16px;
-}
+} */
 
-.close-modal {
+/* .close-modal {
     background: #764191;
     color: #fff;
     border: none;
@@ -254,7 +239,7 @@
 
 .close-modal:hover {
     background: #55236e;
-}
+} */
 
 /* ============ УТИЛИТЫ ============ */
 .is-hidden {
