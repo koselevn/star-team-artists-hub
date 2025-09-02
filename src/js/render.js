@@ -93,15 +93,23 @@ export function createArtistInfo(artist) {
         />
         <div>
           <div class="modal-artist-info">
-            <h3 class="modal-artist-title">Years active</h3>
-            <p class="modal-artist-title-descr">${years}</p>
-            <h3 class="modal-artist-title">Sex</h3>
-            <p class="modal-artist-title-descr">${artist.strGender}</p>
-            <h3 class="modal-artist-title">Members</h3>
-            <p class="modal-artist-title-descr">${artist.intMembers}</p>
-            <h3 class="modal-artist-title">Country</h3>
-            <p class="modal-artist-title-descr">${artist.strCountry}</p>
-          </div>
+            <div>
+              <h3 class="modal-artist-title">Years active</h3>
+              <p class="modal-artist-title-descr">2013–present</p>
+            </div>
+            <div>
+              <h3 class="modal-artist-title">Sex</h3>
+              <p class="modal-artist-title-descr">Male</p>
+            </div>
+            <div>
+              <h3 class="modal-artist-title">Members</h3>
+              <p class="modal-artist-title-descr">1</p>
+            </div>
+            <div>
+              <h3 class="modal-artist-title">Country</h3>
+              <p class="modal-artist-title-descr">United States</p>
+            </div>
+</div>
           <h3 class="modal-artist-title">Biography</h3>
           <p class="modal-artist-title-descr">
             ${artist.strBiographyEN}
