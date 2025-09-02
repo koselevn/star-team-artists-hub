@@ -11,7 +11,6 @@ const refs = {
   loadMoreBtn: document.querySelector('.btn-more'),
 };
 
-// Инициализация страницы
 async function initArtists() {
   if (!refs.cardsContainer || !refs.loadMoreBtn) {
     console.error('Required elements not found');
@@ -46,7 +45,6 @@ async function initArtists() {
   }
 }
 
-// Обработка клика по кнопке "More"
 async function onLoadMoreBtnClick(event) {
   event.target.blur();
   currentPage++;
@@ -92,7 +90,6 @@ async function onLoadMoreBtnClick(event) {
   }
 }
 
-// Обработка клика по карточке артиста
 function onArtistCardClick(event) {
   const learnMoreBtn = event.target.closest('.learn-more-btn');
   if (!learnMoreBtn) return;
@@ -100,19 +97,26 @@ function onArtistCardClick(event) {
   const artistId = learnMoreBtn.dataset.artistId;
   if (!artistId) {
     console.error('Artist ID not found');
+    iziToast.error({
+      title: 'Error',
+      message: 'Artist ID not found.',
+      position: 'topRight',
+      timeout: 3000,
+      titleColor: '#fff',
+      backgroundColor: '#d63031',
+      messageColor: '#fff',
+    });
     return;
   }
 
   openArtistModal(artistId);
 }
 
-document.addEventListener('DOMContentLoaded', initArtists);
+document.addEventListener('DOMContentLoaded', () => {
+  initArtists();
+  refs.cardsContainer?.addEventListener('click', onArtistCardClick);
+});
+
 if (refs.loadMoreBtn) {
   refs.loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
-}document.querySelector('.gallery')?.addEventListener('click', event => {
-  if (event.target.closest('.learn-more-btn')) {
-    const card = event.target.closest('.artist-card');
-    const artistId = card.dataset.id;
-    openArtistModal(artistId);
-  }
-});
+}
