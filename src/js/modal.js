@@ -1,5 +1,5 @@
 import { createArtistInfo } from './render.js';
-import { getArtists } from './api.js';
+import { getArtist } from './api.js';
 
 const modalOverlay = document.querySelector('.modal-artist-overlay');
 const modalContent = document.querySelector('.modal-artist-content');
@@ -37,10 +37,10 @@ export async function openArtistModal(artistId) {
         modalOverlay.classList.add('is-open');
         modalContent.innerHTML = '<span class="loader"></span>';
 
-        const data = await getArtistById(artistId); // функция в api.js
+        const data = await getArtist(artistId); // <-- правильная функция из api.js
         if (!data) throw new Error('Artist not found');
 
-        createArtistInfo(data); // отрисовка разметки
+        createArtistInfo(data); // <-- сюда передаём объект артиста
     } catch (err) {
         modalContent.innerHTML = '<p>Error loading artist data.</p>';
         console.error(err);

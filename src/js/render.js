@@ -53,6 +53,11 @@ function msToMinSec(ms) {
 }
 
 export function createArtistInfo(artist) {
+    if (!artist) {
+        artistInfoEl.innerHTML = '<p>No artist data found</p>';
+        return;
+    }
+
     const genreList = !artist.genres || artist.genres.length === 0
         ? '<li></li>'
         : artist.genres.map(genre => `<li class="modal-artist-list-item">${genre}</li>`).join('');
