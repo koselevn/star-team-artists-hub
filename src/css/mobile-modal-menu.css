@@ -1,0 +1,90 @@
+.mob-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #f2fafa;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.mob-menu.is-open {
+    transform: translateX(0);
+    background: #060307;
+}
+
+.menu-close-icon {
+    fill: #fff;
+}
+
+.mob-menu-container {
+    padding: 15px 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mob-menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    flex-direction: row-reverse;
+}
+
+
+.mob-menu-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    fill: #fff;
+    margin-right: 12px;
+}
+
+.mob-menu-nav {
+    margin-top: 40px;
+    flex-grow: 1;
+}
+
+.mob-menu-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.mob-menu-nav li {
+    margin-bottom: 32px;
+}
+
+.mob-menu-nav a {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 150%;
+    color: #fff;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+
+    .mob-menu-bottom {
+        margin-right: auto;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+}
+
+/* Desktop */
+
+@media (min-width: 1440px) {
+    .mob-menu {
+        display: none;
+    }
+}

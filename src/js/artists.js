@@ -1,6 +1,6 @@
 import { renderArtists, showLoadMoreButton, hideLoadMoreButton, showLoader, hideLoader } from './render.js';
 import { getArtists } from './api.js';
-// import { openArtistModal } from './modal.js';      //<--------- будет мадалка
+import { openArtistModal } from './modal.js';      //<--------- будет мадалка
 import iziToast from 'izitoast';
 
 const LIMIT = 8;
@@ -97,7 +97,7 @@ function onArtistCardClick(event) {
     const artistId = learnMoreBtn.dataset.artistId;
     if (!artistId) return;
 
-    // openArtistModal(artistId);    //<--------------- Open Modal Window
+    openArtistModal(artistId);    //<--------------- Open Modal Window
 }
 
 document.addEventListener('DOMContentLoaded', initArtists);

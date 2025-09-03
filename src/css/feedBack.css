@@ -125,6 +125,14 @@
     pointer-events: none;
 }
 
+.feedback-btn {
+    transition: opacity 0.2s !important;
+}
+
+.feedback-btn:hover {
+    opacity: 0.6;
+}
+
     
 @media screen and (min-width:768px){
 

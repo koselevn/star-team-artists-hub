@@ -1,4 +1,7 @@
 /* Modal artist details */
+body.no-scroll {
+  overflow: hidden;
+}
 
 .modal-artist-overlay {
   background-color: rgba(0, 0, 0, 0.25);
@@ -9,6 +12,7 @@
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
+  inset: 0;
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -71,6 +75,11 @@
   margin-bottom: 16px;
 }
 .modal-artist-photo {
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  border-radius: 16px;
+  width: 100%;
   margin-bottom: 32px;
 }
 .modal-artist-title,
@@ -83,6 +92,8 @@
 
 .modal-artist-title-descr {
   font-weight: 400;
+  max-height: 135px;
+  overflow-y: auto;
   margin-bottom: 16px;
 }
 .modal-artist-title-descr:last-child {
@@ -248,10 +259,13 @@
   }
   .modal-artist-about {
     display: flex;
+    max-height: 374px;
     gap: 32px;
   }
-  .modal-artist-photo {
+  .modal-artist-about div {
     max-width: 576px;
+  }
+  .modal-artist-photo {
     margin-bottom: 0;
   }
   .modal-artist-info div:nth-child(2),
