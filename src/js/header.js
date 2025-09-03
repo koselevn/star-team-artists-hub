@@ -39,3 +39,13 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         }
     });
 });
+
+
+
+// Закрытие меню при клике на пункт навигации внутри мобильного меню
+document.querySelectorAll('.mob-menu-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('is-open');
+        document.body.style.overflow = '';
+    });
+});
