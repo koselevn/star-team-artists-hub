@@ -29,6 +29,7 @@
 }
 
 .footer-nav-list li {
+  text-align: center;
   transition: color 0.2s;
 }
 
