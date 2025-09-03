@@ -1,4 +1,3 @@
-// const artistInfoEl = document.querySelector(".modal-artist-content");
 const artistsEl = document.querySelector("#artist-cards");
 
 function createArtistsCartTemplate(artist) {
@@ -45,133 +44,113 @@ export function hideLoader(loader = document.querySelector('.preloader-box')) {
     if (loader) loader.classList.add('is-hidden');
 }
 
-function msToMinSec(ms) {
-    let totalSeconds = Math.floor(ms / 1000);
-    let minutes = Math.floor(totalSeconds / 60);
-    let seconds = totalSeconds % 60;
-    return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+// function msToMinSec(ms) {
+//     let totalSeconds = Math.floor(ms / 1000);
+//     let minutes = Math.floor(totalSeconds / 60);
+//     let seconds = totalSeconds % 60;
+//     return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+// }
+
+
+
+
+
+export function renderArtistModal(artist) {
+  const modalContent = document.querySelector('.modal-artist-content');
+
+  const genres = artist.genres?.length ? artist.genres.map(g => `<li class="modal-artist-list-item">${g}</li>`).join('') : '<li class="modal-artist-list-item">Unknown</li>';
+
+  const albums = groupTracksByAlbum(artist.tracksList);
+    console.log('sadfsda', Object.keys(albums));
+  const albumsMarkup = Object.keys(albums).map(albumName => {
+    const tracks = albums[albumName]
+      .slice(0, 15) 
+      .map(track => `
+        <li class="track">
+          <span class="track-name">${track.strTrack}</span>
+          <span class="track-time">${formatDuration(track.intDuration)}</span>
+          <a class="track-link" href="${track.movie || `https://www.youtube.com/results?search_query=${encodeURIComponent(track.strTrack + ' ' + artist.strArtist)}" target="_blank`} ">
+            <svg class="icon" width="20" height="14">
+              <use href="/img/icon-for-modal-artist.svg#icon-youtube-btn"></use>
+            </svg>
+          </a>
+        </li>
+      `).join('');
+
+    return `
+      <li class="album">
+        <h2 class="album-title">${albumName}</h2>
+        <div class="tracks-header">
+          <span>Track</span>
+          <span>Time</span>
+          <span>Link</span>
+        </div>
+        <ul class="track-list">
+          ${tracks}
+        </ul>
+      </li>
+    `;
+  }).join('');
+
+  const markup = `
+    <h2 class="modal-artist-name">${artist.strArtist}</h2>
+    <div class="modal-artist-about">
+      <img class="modal-artist-photo" src="${artist.strArtistThumb}" alt="${artist.strArtist}" />
+      <div>
+        <div class="modal-artist-info">
+        <div>
+          <h3 class="modal-artist-title">Years active</h3>
+          <p class="modal-artist-title-descr">${artist.intFormedYear || 'Unknown'} – ${artist.intDiedYear || 'present'}</p>
+          </div>
+          <div>
+          <h3 class="modal-artist-title">Sex</h3>
+          <p class="modal-artist-title-descr">${artist.strGender || 'Unknown'}</p>
+          </div>
+          <div>
+          <h3 class="modal-artist-title">Members</h3>
+          <p class="modal-artist-title-descr">${artist.intMembers || 'Unknown'}</p>
+          </div>
+          <div>
+          <h3 class="modal-artist-title">Country</h3>
+          <p class="modal-artist-title-descr">${artist.strCountry || 'Unknown'}</p>
+          </div>
+        </div>
+
+        <h3 class="modal-artist-title">Biography</h3>
+        <p class="modal-artist-title-descr">${artist.strBiographyEN || 'No biography available'}</p>
+        
+        <ul class="modal-artist-list">
+          ${genres}
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="modal-artist-album-title">Albums</h3>
+    <ul class="modal-artist-album">
+      ${albumsMarkup}
+    </ul>
+  `;
+
+  modalContent.innerHTML = markup;
+}
+
+function groupTracksByAlbum(tracks) {
+  return tracks.reduce((acc, track) => {
+    if (!track.strAlbum) return acc;
+    if (!acc[track.strAlbum]) acc[track.strAlbum] = [];
+    acc[track.strAlbum].push(track);
+    return acc;
+  }, {});
+}
+
+function formatDuration(ms) {
+  if (!ms || ms === "0") return "—";
+  const totalSeconds = Math.floor(ms / 1000);
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
 
 
 
-// export function createArtistInfo(artists) {
-//     const markup = artists.map(artist => {
-//         const genreList = !artist.genres || artist.genres.length === 0
-//             ? '<li></li>'
-//             : artist.genres.map(genre => `<li class="artist-genre-item">${genre}</li>`).join('');
-
-//         const years = artist.intFormedYear && artist.intFormedYear !== "null"
-//             ? `${artist.intFormedYear} - ${(!artist.intDiedYear || artist.intDiedYear === "null") ? 'present' : artist.intDiedYear}`
-//             : 'information missing';
-
-        
-//         const albumList = !artist.albumsList || artist.albumsList.length === 0
-//             ? '<li>There are no any album</li>'
-//             : artist.albumsList.map(album => {
-//                 const trackList = !album.tracks || album.tracks.length === 0
-//                     ? '<li>There are no any track</li>'
-//                     : album.tracks.map(track => `
-//       <li class="track">
-//         <span class="track-name">${track.strTrack}</span>
-//         <span class="track-time">${msToMinSec(track.intDuration)}</span>
-//         <a class="track-link" href="${!track.movie || track.movie === "null" ? '#' : track.movie}">
-//           <svg class="icon" width="20.01" height="14.01">
-//             <use href="../img/icon-for-modal-artist.svg#icon-youtube-btn"></use>
-//           </svg>
-//         </a>
-//       </li>
-//     `).join('');
-            
-//                 return `
-//         <li class="album" >
-//         <h2 class="album-title">${album.strAlbum}</h2>
-//           <div class="tracks-header">
-//             <span>Track</span>
-//             <span>Time</span>
-//             <span>Link</span>
-//           </div>
-//           <ul class="track-list">
-//             ${trackList}
-//           </ul>
-//         </li>
-//         `;
-//             }).join('');
-
-
-    
-//         return `
-// <h2 class="modal-artist-name">${artist.strArtist}</h2>
-//       <div class="modal-artist-about">
-//         <img
-//           class="modal-artist-photo"
-//           src="${artist.strArtistThumb}"
-//           alt="men"
-//         />
-//         <div>
-//           <div class="modal-artist-info">
-//             <h3 class="modal-artist-title">Years active</h3>
-//             <p class="modal-artist-title-descr">${years}</p>
-//             <h3 class="modal-artist-title">Sex</h3>
-//             <p class="modal-artist-title-descr">${artist.strGender}</p>
-//             <h3 class="modal-artist-title">Members</h3>
-//             <p class="modal-artist-title-descr">${artist.intMembers}</p>
-//             <h3 class="modal-artist-title">Country</h3>
-//             <p class="modal-artist-title-descr">${artist.strCountry}</p>
-//           </div>
-//           <h3 class="modal-artist-title">Biography</h3>
-//           <p class="modal-artist-title-descr">
-//             ${artist.strBiographyEN}
-//           </p>
-//           <ul class="modal-artist-list">
-//             ${genreList}
-//           </ul>
-//         </div>
-//       </div>
-//       <h3 class="modal-artist-album-title">Albums</h3>
-//       <ul class="modal-artist-album">
-//             ${albumList}        
-//       </ul>
-//     `;
-//     }).join('');
-//     artistInfoEl.innerHTML = markup;
-
-//     console.log(markup);
-// }
-
-
-
-
-
-// const artists = {
-//   "_id": "65ada227af9f6d155db46908",
-//   "strArtistThumb": "https://ftp.goit.study/img/musicbox/artist/strArtistThumb_qvuxvs1347997318.jpg",
-//   "strArtist": "U2",
-//   "strLabel": "Island",
-//   "intFormedYear": "1976",
-//   "intDiedYear": "null",
-//   "genres": [
-//     "Rock",
-//     "Rock/Pop"
-//   ],
-//   "strGender": "Male",
-//   "intMembers": "4",
-//   "strCountry": "Dublin, Ireland",
-//   "strBiographyEN": "U2 are an Irish rock band from Dublin, formed in 1976. The group consists of Bono (lead vocals and rhythm guitar)...",
-//   "albumsList": [
-//     {
-//       "_id": "65ada232af9f6d1bc9a32189",
-//       "strAlbum": "Children of the Revolution",
-//       "intYearReleased": "2002",
-//       "tracks": [
-//         {
-//           "_id": "65ada232af9f6d155db46975",
-//           "strTrack": "Two Hearts Beat as One",
-//           "strArtist": "U2",
-//           "intDuration": "218400",
-//           "movie": "https://www.youtube.com/watch?v=8Iaz-wtKYpo or null"
-//         }
-//       ]
-//     }
-//   ]
-// }
