@@ -25,62 +25,28 @@
     <script type="module" crossorigin src="/star-team-artists-hub/index.js"></script>
     <link rel="modulepreload" crossorigin href="/star-team-artists-hub/assets/vendor-BQjjM57f.js">
     <link rel="stylesheet" crossorigin href="/star-team-artists-hub/assets/vendor-CYjyfbH6.css">
-    <link rel="stylesheet" crossorigin href="/star-team-artists-hub/assets/index-C6VaNqSt.css">
+    <link rel="stylesheet" crossorigin href="/star-team-artists-hub/assets/index-DtYBR6SX.css">
   </head>
   <body>
     <header class="page-header">
-  <div class="container">
-<div class="header-nav-section">
-        <svg class="logo" width="119" height="51">
-          <use href="../img/sprite.svg#icon-Content"></use>
-        </svg>
-      
-    <nav class="header-nav">
-      
-        <button class="burger-btn" type="button" data-menu-open>
-          <svg class="burger-icon" width="48" height="48">
-            <use href="../img/sprite.svg#icon-Icon"></use>
-          </svg>
-        </button>
-        <ul class="nav-list">
-          
-          <li><a href="#artists" class="nav-link">Artists</a></li>
-          <li><a href="#aboutUs" class="nav-link">About Us</a></li>
-          <li><a href="#reviews" class="nav-link">Reviews</a></li>
-        </ul>
-      </div>
-     </div>
-    
-    </nav>
-    <!--Mobile menu-->
-    <div class="mob-menu">
-      <div class="mob-menu-container">
-        <div class="mob-menu-top">
-          <button class="mob-menu-btn" type="button" data-menu-close>
-           <svg class="menu-close-icon" width="24" height="24">
-             <use href="../img/sprite.svg#icon-cross"></use>
-           </svg>
-          </button>
-          <div class="header-logo-section">
-            <svg class="logo" width="119" height="51">
-              <use href="../img/sprite.svg#icon-Content"></use>
-            </svg>
-          </div>
-          
-        </div>
-        <nav class="mob-menu-nav">
-          <ul>
-            <li><a href="#artists" class="nav-link">Artists</a></li>
-            <li><a href="#aboutUs" class="nav-link">About Us</a></li>
-            <li><a href="#reviews" class="nav-link">Reviews</a></li>
-          </ul>
-        </nav>
-        
-      </div>
+  <div class="container header-container">
+    <div class="header-logo-section">
+      <img class="logo" src="../img/main-header-logo.svg" alt="ArtistsHub">
     </div>
+    <nav class="header-nav">
+      <ul>
+        <li><a href="#artists" class="nav-link">Artists</a></li>
+        <li><a href="#aboutUs" class="nav-link">About Us</a></li>
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+      </ul>
+    </nav>
+    <button class="mob-menu-btn" type="button" data-menu-open>
+      <svg class="menu-open-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 6H20V8H4V6ZM8 11H20V13H8V11ZM13 16H20V18H13V16Z" fill="white" />
+      </svg>
+    </button>
   </div>
 </header>
-
     <main>
       <section id="hero" class="hero-section">
     <div class="container hero-container">
@@ -145,7 +111,7 @@
   <span class="spinner"></span>
 </div>
 
-      <section class="about-us" id="about-us">
+      <section class="about-us" id="aboutUs">
     <div class="container about-us-container">
 
         <picture class="about-us-img-container">
@@ -174,18 +140,18 @@
         </div>
     </div>
 </section>
-      <section class="feedback-section">
+      <section class="feedback-section" id="reviews">
   <h2 class="visually-hidden">Feedbacks our visitors</h2>
   <div class="container">
     <div class="swiper mySwiper">
       <ul class="swiper-wrapper"></ul>
 
-      <button type="button" class="swiper-button-next button-right">
+      <button type="button" class="feedback-btn swiper-button-next button-right">
         <svg class="button-svg">
           <use href="../img/feedbacks/image.svg#icon-icon1"></use>
         </svg>
       </button>
-      <button type="button" class="swiper-button-prev button-left">
+      <button type="button" class="feedback-btn swiper-button-prev button-left">
         <svg class="button-svg">
           <use href="../img/feedbacks/image.svg#icon-icon"></use>
         </svg>
@@ -216,7 +182,7 @@
     <!-- Навігація -->
     <ul class="footer-nav-list">
       <li><a href="#artists">Artists</a></li>
-      <li><a href="#about">About us</a></li>
+      <li><a href="#aboutUs">About us</a></li>
       <li><a href="#reviews">Reviews</a></li>
     </ul>
 
@@ -226,23 +192,23 @@
       <li>
         <ul class="socials-list">
           <li>
-            <a href="#" aria-label="Instagram">
-              <svg width="24" height="24">
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+              <svg class="footer-icon-svg" width="24" height="24">
                 <use href="/star-team-artists-hub/assets/sprite-Bjsyaixk.svg#icon-Instagram"></use>
               </svg>
             </a>
           </li>
 
           <li>
-            <a href="#" aria-label="Facebook">
-              <svg width="24" height="24">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+              <svg class="footer-icon-svg" width="24" height="24">
                 <use href="/star-team-artists-hub/assets/sprite-Bjsyaixk.svg#icon-Facebook"></use>
               </svg>
             </a>
           </li>
           <li>
-            <a href="#" aria-label="Youtube">
-              <svg width="24" height="24">
+            <a href="https://www.youtube.com/" target="_blank" aria-label="Youtube">
+              <svg class="footer-icon-svg" width="24" height="24">
                 <use href="/star-team-artists-hub/assets/sprite-Bjsyaixk.svg#icon-Youtube"></use>
               </svg>
             </a>
@@ -267,7 +233,28 @@
   </div>
 </div>
 
-    
+    <div class="mob-menu">
+    <div class="mob-menu-container">
+        <div class="mob-menu-top">
+            <button class="mob-menu-btn" type="button" data-menu-close>
+                <svg class="menu-close-icon" width="24" height="24">
+                    <use href="../img/sprite.svg#icon-cross"></use>
+                </svg>
+            </button>
+            <div class="header-logo-section">
+                <img class="logo" src="../img/main-header-logo.svg" alt="ArtistsHub">
+            </div>
+
+        </div>
+        <nav class="mob-menu-nav">
+            <ul>
+                <li><a href="#artists" class="nav-link">Artists</a></li>
+                <li><a href="#aboutUs" class="nav-link">About Us</a></li>
+                <li><a href="#reviews" class="nav-link">Reviews</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
 
   </body>
 </html>
