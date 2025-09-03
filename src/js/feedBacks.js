@@ -41,12 +41,11 @@ function renderFeedbacks(data) {
 async function renderAllFeedbacks() {
   try {
     const response = await getFeedbacks();
-    console.log('API response:', response);
 
     if (response && response.data && response.data.length > 0) {
       const feedbacks = response.data.slice(0, 10);
       const markup = renderFeedbacks(feedbacks);
-      console.log('Generated markup:', markup);
+
       ul.insertAdjacentHTML('beforeend', markup);
 
       const swiper = new Swiper('.mySwiper', {
