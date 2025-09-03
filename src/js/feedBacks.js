@@ -65,12 +65,6 @@ async function renderAllFeedbacks() {
 
         on: {
           slideChange: function () {
-            prevBtn.classList.toggle(
-              'swiper-button-disabled',
-              this.isBeginning
-            );
-            nextBtn.classList.toggle('swiper-button-disabled', this.isEnd);
-
             dots.forEach(dot => dot.classList.remove('active'));
             if (this.activeIndex === 0) dots[0].classList.add('active');
             else if (this.activeIndex === 9) dots[2].classList.add('active');
@@ -84,11 +78,6 @@ async function renderAllFeedbacks() {
           1440: { slidesPerView: 1, loop: false },
         },
       });
-
-      prevBtn.classList.add('swiper-button-disabled');
-      if (feedbacks.length <= 1) {
-        nextBtn.classList.add('swiper-button-disabled');
-      }
 
       dots.forEach(dot => {
         dot.addEventListener('click', () => {
