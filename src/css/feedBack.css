@@ -199,24 +199,26 @@
         
                 .swiper-button-next,
                 .swiper-button-prev {
-                    all: unset;
-                    border: 1px solid rgb(148, 147, 147);
-                    border-radius: 8px;
-                    padding: 12px;
-                    width: 12px !important;
-                    height: 12px !important;
-                    margin-bottom: 75px;
-                    margin-top: calc(30px - (var(--swiper-navigation-size) /2)) !important;
+                    display: flex !important;
+                        align-items: center;
+                        justify-content: center;
+                        width: 48px !important;
+                        height: 48px;
+                        padding: 12px;
+                        border: 1px solid rgba(255, 255, 255, 0.5);
+                        border-radius: 8px;
+                        background: none;
+                        color: #764191;
+                        cursor: pointer;
                 }
-                                .swiper-button-next,
-                                .swiper-button-prev {
-                                    display: flex !important;
-                                }
+                               
         
                 .swiper-button-next::after,
                 .swiper-button-prev::after {
                     content: none !important;
                 }
+
+                
         
                                 .custom-pagination {
                                     display: flex !important;
@@ -285,14 +287,17 @@
     
         .swiper-button-next,
         .swiper-button-prev {
-            all: unset;
-            border: 1px solid rgb(148, 147, 147);
-            border-radius: 8px;
-            padding: 20px;
-            width: 12px !important;
-            height: 12px !important;
-            margin-bottom: 59px;
-            margin-top: calc(-63px - (var(--swiper-navigation-size) /2)) !important;
+            display: flex !important;
+                align-items: center;
+                justify-content: center;
+                width: 48px !important;
+                height: 48px;
+                padding: 12px;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 8px;
+                background: none;
+                color: #764191;
+                cursor: pointer;
         }
     
         .swiper-button-next::after,
