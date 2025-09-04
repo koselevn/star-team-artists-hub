@@ -44,14 +44,6 @@ export function hideLoader(loader = document.querySelector('.preloader-box')) {
     if (loader) loader.classList.add('is-hidden');
 }
 
-// function msToMinSec(ms) {
-//     let totalSeconds = Math.floor(ms / 1000);
-//     let minutes = Math.floor(totalSeconds / 60);
-//     let seconds = totalSeconds % 60;
-//     return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-// }
-
-
 
 
 
@@ -61,7 +53,6 @@ export function renderArtistModal(artist) {
   const genres = artist.genres?.length ? artist.genres.map(g => `<li class="modal-artist-list-item">${g}</li>`).join('') : '<li class="modal-artist-list-item">Unknown</li>';
 
   const albums = groupTracksByAlbum(artist.tracksList);
-    console.log('sadfsda', Object.keys(albums));
   const albumsMarkup = Object.keys(albums).map(albumName => {
     const tracks = albums[albumName]
       .slice(0, 15) 
@@ -69,11 +60,11 @@ export function renderArtistModal(artist) {
         <li class="track">
           <span class="track-name">${track.strTrack}</span>
           <span class="track-time">${formatDuration(track.intDuration)}</span>
-          <a class="track-link" href="${track.movie || `https://www.youtube.com/results?search_query=${encodeURIComponent(track.strTrack + ' ' + artist.strArtist)}" target="_blank`} ">
+         ${track.movie ? `<a class="track-link" href="${track.movie}" target="_blank" rel="noopener noreferrer">
             <svg class="icon" width="20" height="14">
-              <use href="/img/icon-for-modal-artist.svg#icon-youtube-btn"></use>
+              <use href="img/icon-for-modal-artist.svg#icon-youtube-btn"></use>
             </svg>
-          </a>
+          </a>` :`<span class="track-link-placeholder"></span>`}
         </li>
       `).join('');
 

@@ -208,6 +208,11 @@ body.no-scroll {
 .track-link:hover {
   transform: scale(1.15);
 }
+.track-link-placeholder {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
 @media only screen and (min-width: 768px) {
   .modal-artist {
     min-width: 702px;
