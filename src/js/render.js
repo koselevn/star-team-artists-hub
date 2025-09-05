@@ -14,9 +14,9 @@ function createArtistsCartTemplate(artist) {
             <h4 class="artist-name">${artist.strArtist}</h4>
             <p class="artist-info">${artist.strBiographyEN}</p>
             <button class="artist-button learn-more-btn" data-artist-id="${artist._id}">Learn More
-                <svg class="artist-button-icon" width="24" height="24">
-                    <use href="../img/about-us-img/about-us.svg#icon-icon"></use>
-                </svg>
+              <svg class="artist-button-icon" width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 14.9426L8 7.94263L0 0.942627V14.9426Z" fill="white" />
+              </svg>
             </button>
         </li>
     `;
