@@ -38,7 +38,7 @@
     align-items: center;
     flex-direction: column;
     opacity: 1 !important;
-        transform: scale(1) !important;
+    transform: scale(1) !important;
 }
 
 .swiper-slide:not(.swiper-slide-active) {
